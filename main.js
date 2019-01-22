@@ -22,9 +22,15 @@ const timeButtonAppend = {
   },
 
   handleCurrentTime() {
+    location.reload();
     let currentTime = new Date().toLocaleString();
     let displayTime = document.createElement("p");
     displayTime.textContent = currentTime;
+    let currentTimeFragment = document.createDocumentFragment()
+    currentTimeFragment.appendChild(displayTime)
+
+    let currentTimeArticle = document.querySelector(".output");
+    currentTimeArticle.appendChild(currentTimeFragment);
   }
 
 }
